@@ -192,7 +192,12 @@
 
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 9. Implement UI components - Welcome Screen
+- [x] 9. Implement UI components - Welcome Screen
+
+
+
+
+
   - [ ] 9.1 Create WelcomeScreen component
     - Ghost name input field with validation
     - "Enter the Haunted Lobby" button
