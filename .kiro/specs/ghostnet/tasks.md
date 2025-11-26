@@ -186,7 +186,10 @@
     - Keep persistent messages indefinitely
     - _Requirements: 5.4, 6.3_
 
-- [ ] 8. Checkpoint - Ensure all tests pass
+- [x] 8. Checkpoint - Ensure all tests pass
+
+
+
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 9. Implement UI components - Welcome Screen
