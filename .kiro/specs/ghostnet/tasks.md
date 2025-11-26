@@ -236,19 +236,27 @@
     - Ghost Whisper button
     - _Requirements: 5.1, 6.1, 7.1, 8.1_
 
-- [ ] 11. Implement UI components - Messages and Effects
-  - [ ] 11.1 Create GhostMessage component
+- [x] 11. Implement UI components - Messages and Effects
+
+
+
+
+  - [x] 11.1 Create GhostMessage component
+
     - Display sender, content, timestamp
     - Ghostly glow effect and fade-in animation
     - Fade-out animation before removal
     - _Requirements: 5.2, 5.3, 5.4, 9.3_
+
   - [ ] 11.2 Create PersistentMessage component
     - Display sender, content, timestamp
     - Standard message styling (no fade-out)
+
     - _Requirements: 6.2, 6.3_
   - [ ] 11.3 Implement screen shake CSS animation
     - Create shake keyframes animation
     - Apply to ChatArea when triggered
+
     - 500ms duration
     - _Requirements: 7.2_
   - [ ] 11.4 Add ghost whisper audio
