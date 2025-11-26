@@ -108,12 +108,18 @@
 
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 5. Implement signaling client module
-  - [ ] 5.1 Create SignalingClient class
+- [x] 5. Implement signaling client module
+
+
+
+
+  - [x] 5.1 Create SignalingClient class
+
     - Implement WebSocket connection management
     - Implement sendJoin, sendOffer, sendAnswer, sendIceCandidate methods
     - Set up event callbacks for received messages
     - _Requirements: 2.1, 2.2, 3.2, 3.3, 3.4_
+
   - [ ] 5.2 Add connection state management and error handling
     - Track connection state (disconnected, connecting, connected, error)
     - Handle WebSocket errors and reconnection
