@@ -63,7 +63,7 @@
     - **Property 12: Signaling Server Message Scope**
     - **Validates: Requirements 15.3**
 
-- [-] 3. Implement frontend core infrastructure
+- [x] 3. Implement frontend core infrastructure
 
   - [x] 3.1 Create validation utilities for ghost names
 
@@ -72,21 +72,33 @@
     - Return validation result with error message if invalid
     - _Requirements: 1.2, 1.3_
 
-  - [ ] 3.2 Write property test for ghost name validation
+  - [x] 3.2 Write property test for ghost name validation
+
     - **Property 1: Ghost Name Validation**
     - **Validates: Requirements 1.2**
-  - [ ] 3.3 Create message serialization utilities
+  - [x] 3.3 Create message serialization utilities
+
+
     - Implement serializeMessage function
     - Implement deserializeMessage function with type guards
     - _Requirements: 11.1, 11.2, 11.3_
-  - [ ] 3.4 Write property test for message serialization round-trip
+
+  - [x] 3.4 Write property test for message serialization round-trip
+
+
     - **Property 8: Message Serialization Round-Trip**
     - **Validates: Requirements 11.1, 11.2, 11.3, 12.1**
-  - [ ] 3.5 Create message type router
+
+
+  - [x] 3.5 Create message type router
+
     - Implement routeMessage function that dispatches based on type
     - Handle unknown types gracefully
+
     - _Requirements: 12.2, 12.3_
-  - [ ] 3.6 Write property test for message type routing
+
+  - [x] 3.6 Write property test for message type routing
+
     - **Property 9: Message Type Routing**
     - **Validates: Requirements 12.2**
 
