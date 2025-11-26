@@ -45,13 +45,20 @@ export function isWebRTCSupported(): boolean {
 export class PeerManager {
   private peers: Map<string, PeerConnection> = new Map()
   private callbacks: PeerManagerCallbacks = {}
-  private localGhostName: string | null = null
+  private _localGhostName: string | null = null
 
   /**
    * Set the local ghost name (used as sender in messages)
    */
   setLocalGhostName(name: string): void {
-    this.localGhostName = name
+    this._localGhostName = name
+  }
+
+  /**
+   * Get the local ghost name
+   */
+  getLocalGhostName(): string | null {
+    return this._localGhostName
   }
 
   /**

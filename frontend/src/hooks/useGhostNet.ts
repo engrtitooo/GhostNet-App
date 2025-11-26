@@ -86,7 +86,7 @@ export function useGhostNet(): UseGhostNetReturn {
   /**
    * Handle incoming WebRTC message
    */
-  const handleIncomingMessage = useCallback((from: string, message: WebRTCMessage) => {
+  const handleIncomingMessage = useCallback((_from: string, message: WebRTCMessage) => {
     switch (message.type) {
       case 'ghost_message':
         addMessage({
