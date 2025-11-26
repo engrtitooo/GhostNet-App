@@ -33,31 +33,45 @@
     - Export types for use in both frontend and backend
     - _Requirements: 11.3, 12.1_
 
-- [ ] 2. Implement backend signaling server
-  - [ ] 2.1 Create Express server with WebSocket support
+- [x] 2. Implement backend signaling server
+
+
+
+
+  - [x] 2.1 Create Express server with WebSocket support
+
     - Set up Express app with CORS
     - Initialize WebSocket server on same port
     - Add health check endpoint
     - _Requirements: 2.1_
-  - [ ] 2.2 Implement lobby manager for ghost tracking
+  - [x] 2.2 Implement lobby manager for ghost tracking
+
     - Create LobbyManager class to track connected ghosts
     - Implement addGhost, removeGhost, getGhosts methods
     - Implement broadcast and sendTo methods
     - _Requirements: 2.3, 2.4_
-  - [ ] 2.3 Implement signaling message handlers
+
+  - [x] 2.3 Implement signaling message handlers
+
     - Handle join messages and broadcast ghost presence
     - Handle offer/answer/ICE candidate relay
     - Handle disconnect and cleanup
+
     - _Requirements: 2.3, 2.4, 3.2, 3.3, 3.4_
-  - [ ] 2.4 Write property test for signaling server message scope
+  - [x] 2.4 Write property test for signaling server message scope
+
     - **Property 12: Signaling Server Message Scope**
     - **Validates: Requirements 15.3**
 
-- [ ] 3. Implement frontend core infrastructure
-  - [ ] 3.1 Create validation utilities for ghost names
+- [-] 3. Implement frontend core infrastructure
+
+  - [x] 3.1 Create validation utilities for ghost names
+
+
     - Implement validateGhostName function
     - Return validation result with error message if invalid
     - _Requirements: 1.2, 1.3_
+
   - [ ] 3.2 Write property test for ghost name validation
     - **Property 1: Ghost Name Validation**
     - **Validates: Requirements 1.2**
