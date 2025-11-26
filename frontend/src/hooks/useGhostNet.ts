@@ -14,6 +14,7 @@ import {
   createWhisperMessage,
   generateMessageId,
 } from '../lib/messages'
+import { playWhisperSound } from '../lib/audio'
 import type { Message, WebRTCMessage } from '../lib/types'
 
 // Ghost message auto-removal timeout (5 seconds)
@@ -67,16 +68,6 @@ export function useGhostNet(): UseGhostNetReturn {
   // Refs for signaling and peer manager (persist across renders)
   const signalingRef = useRef<SignalingClient | null>(null)
   const peerManagerRef = useRef<PeerManager | null>(null)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-
-  // Initialize audio element for whisper sound
-  useEffect(() => {
-    audioRef.current = new Audio('/whisper.mp3')
-    audioRef.current.volume = 0.5
-    return () => {
-      audioRef.current = null
-    }
-  }, [])
 
   /**
    * Add a message to the list
@@ -127,11 +118,8 @@ export function useGhostNet(): UseGhostNetReturn {
         break
 
       case 'whisper':
-        if (soundEnabled && audioRef.current) {
-          audioRef.current.currentTime = 0
-          audioRef.current.play().catch(() => {
-            // Audio play failed (user hasn't interacted with page yet)
-          })
+        if (soundEnabled) {
+          playWhisperSound()
         }
         break
     }

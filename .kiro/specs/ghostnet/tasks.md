@@ -264,38 +264,53 @@
     - Play on whisper signal (if sound enabled)
     - _Requirements: 8.2_
 
-- [ ] 12. Implement error handling and notifications
-  - [ ] 12.1 Create Toast/Notification component
+- [x] 12. Implement error handling and notifications
+
+
+  - [x] 12.1 Create Toast/Notification component
+
+
     - Support error, warning, info variants
     - Auto-dismiss after timeout
     - _Requirements: 2.5, 10.3, 14.2, 14.3_
+
   - [ ] 12.2 Add WebRTC unsupported error banner
     - Display on app load if WebRTC not supported
     - Prevent lobby entry
+
     - _Requirements: 14.1_
   - [ ] 12.3 Add performance warning for large groups
     - Display notice when more than 8 ghosts connected
     - _Requirements: 15.2_
 
-- [ ] 13. Wire up App component and routing
-  - [ ] 13.1 Create App component with screen routing
+- [x] 13. Wire up App component and routing
+
+
+  - [x] 13.1 Create App component with screen routing
+
     - Show WelcomeScreen when not joined
     - Show main chat layout when joined
     - Pass useGhostNet hook state to components
     - _Requirements: 1.4_
-  - [ ] 13.2 Add responsive layout container
+  - [x] 13.2 Add responsive layout container
+
     - Full layout on desktop (sidebar + chat)
     - Collapsed sidebar on mobile
+
     - _Requirements: 16.1, 16.2_
 
-- [ ] 14. Create README and documentation
+
+- [-] 14. Create README and documentation
+
   - [ ] 14.1 Write README.md
     - Project description and features
     - Tech stack overview
     - Local development instructions
+
     - Demo instructions (two browser windows)
     - Known limitations
     - _Requirements: All_
 
-- [ ] 15. Final Checkpoint - Ensure all tests pass
+- [x] 15. Final Checkpoint - Ensure all tests pass
+
   - Ensure all tests pass, ask the user if questions arise.
