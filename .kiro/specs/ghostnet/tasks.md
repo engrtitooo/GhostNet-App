@@ -152,28 +152,36 @@
     - Return error if WebRTC is not supported
     - _Requirements: 14.1_
 
-- [ ] 7. Implement useGhostNet custom hook
-  - [ ] 7.1 Create useGhostNet hook with state management
+- [x] 7. Implement useGhostNet custom hook
+
+
+  - [x] 7.1 Create useGhostNet hook with state management
+
     - Manage ghostName, connectedGhosts, messages state
     - Manage connectionState and error state
     - Manage settings (soundEnabled, shakeEnabled)
     - _Requirements: 4.1, 10.1, 13.1_
-  - [ ] 7.2 Implement joinLobby action
+
+  - [x] 7.2 Implement joinLobby action
     - Validate ghost name
     - Connect to signaling server
     - Set up peer connections with existing ghosts
+
     - _Requirements: 1.4, 2.1, 2.2, 3.1_
-  - [ ] 7.3 Implement message sending actions
+  - [x] 7.3 Implement message sending actions
     - Implement sendGhostMessage and sendPersistentMessage
     - Implement triggerShake and triggerWhisper
+
     - Broadcast messages to all peers
     - _Requirements: 5.1, 6.1, 7.1, 8.1_
-  - [ ] 7.4 Implement message receiving and effects
+  - [x] 7.4 Implement message receiving and effects
     - Handle incoming messages and add to state
+
     - Trigger shake animation when shake received (if enabled)
     - Trigger whisper sound when whisper received (if enabled)
     - _Requirements: 5.2, 7.2, 8.2, 13.2, 13.3_
-  - [ ] 7.5 Implement ghost message auto-removal
+  - [x] 7.5 Implement ghost message auto-removal
+
     - Set timeout to remove ghost messages after 5 seconds
     - Keep persistent messages indefinitely
     - _Requirements: 5.4, 6.3_
