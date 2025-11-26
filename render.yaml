@@ -1,8 +1,9 @@
-# Render Blueprint - Deploy GhostNet with one click
+# Render Blueprint - Deploy GhostNet
 # https://render.com/docs/blueprint-spec
+# Live at: https://ghostnet.app
 
 services:
-  # Backend WebSocket Server
+  # Backend WebSocket Server (api.ghostnet.app)
   - type: web
     name: ghostnet-backend
     runtime: node
@@ -14,7 +15,7 @@ services:
         value: production
     healthCheckPath: /health
 
-  # Frontend Static Site
+  # Frontend Static Site (ghostnet.app)
   - type: web
     name: ghostnet-frontend
     runtime: static
@@ -23,7 +24,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_WS_URL
-        sync: false  # Set this manually after backend deploys
+        value: wss://api.ghostnet.app/ws
     headers:
       - path: /*
         name: Cache-Control

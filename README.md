@@ -1,6 +1,8 @@
-# 👻 GhostNet - Local Peer-to-Peer Ghost Chat
+# 👻 GhostNet - Peer-to-Peer Ghost Chat
 
-A spooky, Halloween-themed peer-to-peer chat application that lets users on the same local network send ghostly messages without a centralized server.
+🌐 **Live Demo**: [https://ghostnet.app](https://ghostnet.app)
+
+A spooky, Halloween-themed peer-to-peer chat application that lets users send ghostly messages without a centralized server.
 
 ## ✨ Features
 
@@ -125,46 +127,46 @@ cd backend && npm test
 cd frontend && npm test
 ```
 
-## 🚀 Deployment (Render)
+## 🌐 Live Demo
 
-### Deploy Backend
+Try GhostNet now at **[https://ghostnet.app](https://ghostnet.app)**
+
+1. Open the link in two browser tabs (or share with a friend)
+2. Enter different ghost names in each tab
+3. Start chatting, shaking screens, and playing spooky sounds!
+
+## 🚀 Deployment
+
+GhostNet is deployed on Render:
+
+- **Frontend**: [https://ghostnet.app](https://ghostnet.app)
+- **Backend**: WebSocket signaling server on Render
+
+### Self-Hosting
+
+If you want to deploy your own instance:
 
 1. Go to [render.com](https://render.com) and sign up with GitHub
-2. Click **New +** → **Web Service**
-3. Connect your repository
-4. Configure:
-   - **Name**: `ghostnet-backend`
-   - **Root Directory**: `backend`
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
-5. Add Environment Variables:
-   - `PORT`: `10000`
-   - `NODE_ENV`: `production`
-6. Click **Create Web Service**
+2. Deploy the **Backend** as a Web Service:
+   - Root Directory: `backend`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+   - Environment: `PORT=10000`, `NODE_ENV=production`
 
-Your backend URL will be: `https://ghostnet-backend.onrender.com`
+3. Deploy the **Frontend** as a Static Site:
+   - Root Directory: `frontend`
+   - Build Command: `npm install && npm run build`
+   - Publish Directory: `dist`
+   - Environment: `VITE_WS_URL=wss://your-backend-url/ws`
 
-### Deploy Frontend
-
-1. Click **New +** → **Static Site**
-2. Connect the same repository
-3. Configure:
-   - **Name**: `ghostnet-frontend`
-   - **Root Directory**: `frontend`
-   - **Build Command**: `npm install && npm run build`
-   - **Publish Directory**: `dist`
-4. Add Environment Variable:
-   - `VITE_WS_URL`: `wss://ghostnet-backend.onrender.com/ws`
-5. Click **Create Static Site**
-
-Your frontend URL will be: `https://ghostnet-frontend.onrender.com`
-
-> ⚠️ **Note**: Free tier services spin down after 15 minutes of inactivity. First request after sleep takes ~30 seconds.
+> ⚠️ **Note**: Free tier services spin down after 15 minutes of inactivity.
 
 ## 📝 License
 
 MIT License - feel free to use for your own spooky projects!
 
 ---
+
+🌐 **Try it live**: [https://ghostnet.app](https://ghostnet.app)
 
 Built with 👻 for hackathon fun!
