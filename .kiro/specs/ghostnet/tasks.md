@@ -120,27 +120,34 @@
     - Set up event callbacks for received messages
     - _Requirements: 2.1, 2.2, 3.2, 3.3, 3.4_
 
-  - [ ] 5.2 Add connection state management and error handling
+  - [x] 5.2 Add connection state management and error handling
     - Track connection state (disconnected, connecting, connected, error)
     - Handle WebSocket errors and reconnection
     - _Requirements: 2.5, 14.3_
 
-- [ ] 6. Implement WebRTC peer manager module
-  - [ ] 6.1 Create PeerManager class for WebRTC connections
+- [x] 6. Implement WebRTC peer manager module
+
+
+  - [x] 6.1 Create PeerManager class for WebRTC connections
+
     - Implement createPeerConnection with data channel setup
     - Implement createOffer and handleOffer methods
     - Implement handleAnswer and addIceCandidate methods
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
-  - [ ] 6.2 Implement message broadcasting
+
+  - [x] 6.2 Implement message broadcasting
     - Implement broadcast method to send to all peers
     - Implement sendMessage for single peer
     - Set up onMessage callback for received data
+
     - _Requirements: 5.1, 6.1, 7.1, 8.1_
-  - [ ] 6.3 Add peer connection state tracking
+  - [x] 6.3 Add peer connection state tracking
     - Track connected/disconnected state per peer
     - Emit events on peer connect/disconnect
+
     - _Requirements: 10.2_
-  - [ ] 6.4 Add WebRTC capability detection
+  - [x] 6.4 Add WebRTC capability detection
+
     - Check for RTCPeerConnection support on load
     - Return error if WebRTC is not supported
     - _Requirements: 14.1_
