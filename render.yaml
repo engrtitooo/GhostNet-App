@@ -1,0 +1,30 @@
+# Render Blueprint - Deploy GhostNet with one click
+# https://render.com/docs/blueprint-spec
+
+services:
+  # Backend WebSocket Server
+  - type: web
+    name: ghostnet-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /health
+
+  # Frontend Static Site
+  - type: web
+    name: ghostnet-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_WS_URL
+        sync: false  # Set this manually after backend deploys
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate

@@ -125,6 +125,42 @@ cd backend && npm test
 cd frontend && npm test
 ```
 
+## 🚀 Deployment (Render)
+
+### Deploy Backend
+
+1. Go to [render.com](https://render.com) and sign up with GitHub
+2. Click **New +** → **Web Service**
+3. Connect your repository
+4. Configure:
+   - **Name**: `ghostnet-backend`
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+5. Add Environment Variables:
+   - `PORT`: `10000`
+   - `NODE_ENV`: `production`
+6. Click **Create Web Service**
+
+Your backend URL will be: `https://ghostnet-backend.onrender.com`
+
+### Deploy Frontend
+
+1. Click **New +** → **Static Site**
+2. Connect the same repository
+3. Configure:
+   - **Name**: `ghostnet-frontend`
+   - **Root Directory**: `frontend`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+4. Add Environment Variable:
+   - `VITE_WS_URL`: `wss://ghostnet-backend.onrender.com/ws`
+5. Click **Create Static Site**
+
+Your frontend URL will be: `https://ghostnet-frontend.onrender.com`
+
+> ⚠️ **Note**: Free tier services spin down after 15 minutes of inactivity. First request after sleep takes ~30 seconds.
+
 ## 📝 License
 
 MIT License - feel free to use for your own spooky projects!
