@@ -198,7 +198,7 @@
 
 
 
-  - [ ] 9.1 Create WelcomeScreen component
+  - [x] 9.1 Create WelcomeScreen component
     - Ghost name input field with validation
     - "Enter the Haunted Lobby" button
     - Display validation errors inline
@@ -217,18 +217,18 @@
     - Settings toggles for sound and shake
     - _Requirements: 9.2, 13.1_
 
-  - [ ] 10.2 Create Sidebar component
+  - [x] 10.2 Create Sidebar component
     - Display list of connected ghosts
     - Highlight current user's name
     - Responsive: collapse on mobile
 
     - _Requirements: 4.1, 4.4, 16.1, 16.2_
-  - [ ] 10.3 Create ChatArea component
+  - [x] 10.3 Create ChatArea component
     - Message history container with scroll
 
     - Shake animation wrapper
     - _Requirements: 5.2, 6.2, 7.2_
-  - [ ] 10.4 Create MessageInput component
+  - [x] 10.4 Create MessageInput component
     - Text input field
     - Send Ghost Message button
     - Send Persistent Message button
@@ -248,18 +248,18 @@
     - Fade-out animation before removal
     - _Requirements: 5.2, 5.3, 5.4, 9.3_
 
-  - [ ] 11.2 Create PersistentMessage component
+  - [x] 11.2 Create PersistentMessage component
     - Display sender, content, timestamp
     - Standard message styling (no fade-out)
 
     - _Requirements: 6.2, 6.3_
-  - [ ] 11.3 Implement screen shake CSS animation
+  - [x] 11.3 Implement screen shake CSS animation
     - Create shake keyframes animation
     - Apply to ChatArea when triggered
 
     - 500ms duration
     - _Requirements: 7.2_
-  - [ ] 11.4 Add ghost whisper audio
+  - [x] 11.4 Add ghost whisper audio
     - Include short spooky audio file
     - Play on whisper signal (if sound enabled)
     - _Requirements: 8.2_
@@ -274,12 +274,12 @@
     - Auto-dismiss after timeout
     - _Requirements: 2.5, 10.3, 14.2, 14.3_
 
-  - [ ] 12.2 Add WebRTC unsupported error banner
+  - [x] 12.2 Add WebRTC unsupported error banner
     - Display on app load if WebRTC not supported
     - Prevent lobby entry
 
     - _Requirements: 14.1_
-  - [ ] 12.3 Add performance warning for large groups
+  - [x] 12.3 Add performance warning for large groups
     - Display notice when more than 8 ghosts connected
     - _Requirements: 15.2_
 
@@ -300,9 +300,9 @@
     - _Requirements: 16.1, 16.2_
 
 
-- [-] 14. Create README and documentation
+- [x] 14. Create README and documentation
 
-  - [ ] 14.1 Write README.md
+  - [x] 14.1 Write README.md
     - Project description and features
     - Tech stack overview
     - Local development instructions
