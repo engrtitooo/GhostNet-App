@@ -102,7 +102,10 @@
     - **Property 9: Message Type Routing**
     - **Validates: Requirements 12.2**
 
-- [ ] 4. Checkpoint - Ensure all tests pass
+- [x] 4. Checkpoint - Ensure all tests pass
+
+
+
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 5. Implement signaling client module
