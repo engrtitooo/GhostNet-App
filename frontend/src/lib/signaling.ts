@@ -269,19 +269,21 @@ export class SignalingClient {
  * Get the signaling server URL based on environment
  */
 function getSignalingUrl(): string {
-  // 1. Check for explicit environment variable
+  // 1. Check for explicit environment variable (REQUIRED for production)
   if (import.meta.env.VITE_WS_URL) {
     return import.meta.env.VITE_WS_URL
   }
   
-  // 2. Auto-detect based on current location (production fallback)
+  // 2. Check if we're in production (not localhost)
   if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
-    // In production without env var - this is a configuration error
-    console.warn('⚠️ VITE_WS_URL not set! Using fallback detection.')
-    // You should set VITE_WS_URL in your deployment environment
+    // PRODUCTION ERROR: VITE_WS_URL must be set in Netlify environment variables
+    console.error('❌ VITE_WS_URL not set! WebSocket connection will fail.')
+    console.error('   Set VITE_WS_URL=wss://YOUR-RENDER-BACKEND.onrender.com/ws in Netlify')
+    // Return a placeholder that will fail clearly
+    return 'wss://MISSING-VITE-WS-URL.invalid/ws'
   }
   
-  // 3. Default to localhost for development
+  // 3. Local development - use localhost
   return 'ws://localhost:3001/ws'
 }
 
