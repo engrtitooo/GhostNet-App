@@ -1,9 +1,9 @@
-# Render Blueprint - Deploy GhostNet
+# Render Blueprint - Deploy GhostNet Backend
 # https://render.com/docs/blueprint-spec
-# Live at: https://ghostnet.app
+# Frontend is deployed on Netlify: https://ghostnet-app.netlify.app
 
 services:
-  # Backend WebSocket Server (api.ghostnet.app)
+  # Backend WebSocket Server
   - type: web
     name: ghostnet-backend
     runtime: node
@@ -14,18 +14,3 @@ services:
       - key: NODE_ENV
         value: production
     healthCheckPath: /health
-
-  # Frontend Static Site (ghostnet.app)
-  - type: web
-    name: ghostnet-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_WS_URL
-        value: wss://api.ghostnet.app/ws
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=0, must-revalidate

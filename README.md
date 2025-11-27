@@ -137,29 +137,32 @@ Try GhostNet now at **[https://ghostnet.app](https://ghostnet.app)**
 
 ## 🚀 Deployment
 
-GhostNet is deployed on Render:
+GhostNet is deployed with:
 
-- **Frontend**: [https://ghostnet.app](https://ghostnet.app)
-- **Backend**: WebSocket signaling server on Render
+- **Frontend**: [https://ghostnet.app](https://ghostnet.app) (Netlify)
+- **Backend**: Render (WebSocket signaling server)
 
 ### Self-Hosting
 
 If you want to deploy your own instance:
 
+**Backend (Render):**
 1. Go to [render.com](https://render.com) and sign up with GitHub
-2. Deploy the **Backend** as a Web Service:
+2. Create a new Web Service:
    - Root Directory: `backend`
    - Build Command: `npm install && npm run build`
    - Start Command: `npm start`
-   - Environment: `PORT=10000`, `NODE_ENV=production`
 
-3. Deploy the **Frontend** as a Static Site:
-   - Root Directory: `frontend`
+**Frontend (Netlify):**
+1. Go to [netlify.com](https://netlify.com) and sign up with GitHub
+2. Create a new site from Git:
+   - Base Directory: `frontend`
    - Build Command: `npm install && npm run build`
    - Publish Directory: `dist`
-   - Environment: `VITE_WS_URL=wss://your-backend-url/ws`
+3. Add Environment Variable:
+   - `VITE_WS_URL`: `wss://YOUR-RENDER-BACKEND.onrender.com/ws`
 
-> ⚠️ **Note**: Free tier services spin down after 15 minutes of inactivity.
+> ⚠️ **Note**: Render free tier spins down after 15 minutes of inactivity.
 
 ## 📝 License
 

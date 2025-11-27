@@ -131,7 +131,7 @@ export function WelcomeScreen({ onJoin, isConnecting, error, webrtcSupported }: 
 
         {/* Footer */}
         <p className="text-center text-ghost-gray-light text-sm mt-8">
-          Connect with other ghosts at ghostnet.app
+          Connect with other ghosts worldwide 👻
         </p>
       </div>
     </div>

@@ -10,11 +10,12 @@ const PORT = process.env.PORT || 3001
 
 // Middleware - CORS configuration
 const allowedOrigins = [
-  'http://localhost:5173',           // Local development
-  'http://localhost:3000',           // Alternative local
-  'https://ghostnet.app',            // Production domain
-  'https://www.ghostnet.app',        // Production with www
-  /\.netlify\.app$/,                 // Netlify preview deploys
+  'http://localhost:5173',              // Local development (Vite)
+  'http://localhost:3000',              // Alternative local
+  'https://ghostnet.app',               // Production custom domain
+  'https://www.ghostnet.app',           // Production with www
+  'https://ghostnet-app.netlify.app',   // Netlify deployment
+  /\.netlify\.app$/,                    // Netlify preview deploys
 ]
 
 app.use(cors({
