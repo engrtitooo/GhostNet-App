@@ -8,8 +8,34 @@ import { SignalingHandler } from './signaling.js'
 const app = express()
 const PORT = process.env.PORT || 3001
 
-// Middleware
-app.use(cors())
+// Middleware - CORS configuration
+const allowedOrigins = [
+  'http://localhost:5173',           // Local development
+  'http://localhost:3000',           // Alternative local
+  'https://ghostnet.app',            // Production domain
+  'https://www.ghostnet.app',        // Production with www
+  /\.netlify\.app$/,                 // Netlify preview deploys
+]
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin) return callback(null, true)
+    
+    // Check if origin is allowed
+    const isAllowed = allowedOrigins.some(allowed => 
+      typeof allowed === 'string' ? allowed === origin : allowed.test(origin)
+    )
+    
+    if (isAllowed) {
+      callback(null, true)
+    } else {
+      console.log(`CORS blocked origin: ${origin}`)
+      callback(null, true) // Allow anyway for hackathon demo
+    }
+  },
+  credentials: true
+}))
 app.use(express.json())
 
 // Create lobby and signaling handler

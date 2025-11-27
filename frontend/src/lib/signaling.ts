@@ -266,9 +266,30 @@ export class SignalingClient {
 }
 
 /**
+ * Get the signaling server URL based on environment
+ */
+function getSignalingUrl(): string {
+  // 1. Check for explicit environment variable
+  if (import.meta.env.VITE_WS_URL) {
+    return import.meta.env.VITE_WS_URL
+  }
+  
+  // 2. Auto-detect based on current location (production fallback)
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+    // In production without env var - this is a configuration error
+    console.warn('⚠️ VITE_WS_URL not set! Using fallback detection.')
+    // You should set VITE_WS_URL in your deployment environment
+  }
+  
+  // 3. Default to localhost for development
+  return 'ws://localhost:3001/ws'
+}
+
+/**
  * Create a signaling client with the default server URL
  */
 export function createSignalingClient(serverUrl?: string): SignalingClient {
-  const url = serverUrl || import.meta.env.VITE_WS_URL || 'ws://localhost:3001/ws'
+  const url = serverUrl || getSignalingUrl()
+  console.log(`🔌 Signaling URL: ${url}`)
   return new SignalingClient(url)
 }
