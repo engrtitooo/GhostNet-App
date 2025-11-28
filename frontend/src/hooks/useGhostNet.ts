@@ -318,24 +318,35 @@ export function useGhostNet(): UseGhostNetReturn {
   }, [ghostName, addMessage])
 
   /**
-   * Trigger screen shake on all peers
+   * Trigger screen shake on all peers and locally
    */
   const triggerShake = useCallback(() => {
     if (!ghostName) return
 
     const message = createShakeMessage(ghostName)
     peerManagerRef.current?.broadcast(message)
-  }, [ghostName])
+
+    // Also trigger locally
+    if (shakeEnabled) {
+      setIsShaking(true)
+      setTimeout(() => setIsShaking(false), 500)
+    }
+  }, [ghostName, shakeEnabled])
 
   /**
-   * Trigger whisper sound on all peers
+   * Trigger whisper sound on all peers and locally
    */
   const triggerWhisper = useCallback(() => {
     if (!ghostName) return
 
     const message = createWhisperMessage(ghostName)
     peerManagerRef.current?.broadcast(message)
-  }, [ghostName])
+
+    // Also trigger locally
+    if (soundEnabled) {
+      playWhisperSound()
+    }
+  }, [ghostName, soundEnabled])
 
   // Cleanup on unmount
   useEffect(() => {
