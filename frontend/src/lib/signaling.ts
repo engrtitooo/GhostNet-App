@@ -41,6 +41,7 @@ export class SignalingClient {
   private reconnectAttempts = 0
   private maxReconnectAttempts = 3
   private reconnectDelay = 1000
+  private intentionalDisconnect = false
 
   constructor(serverUrl: string) {
     this.serverUrl = serverUrl
@@ -109,7 +110,7 @@ export class SignalingClient {
    * Disconnect from the signaling server
    */
   disconnect(): void {
-    this.reconnectAttempts = this.maxReconnectAttempts // Prevent reconnection
+    this.intentionalDisconnect = true
     if (this.ws) {
       this.ws.close()
       this.ws = null
@@ -242,6 +243,11 @@ export class SignalingClient {
    * Attempt to reconnect to the signaling server
    */
   private attemptReconnect(): void {
+    // Don't reconnect if user intentionally disconnected
+    if (this.intentionalDisconnect) {
+      return
+    }
+
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
       console.log('Max reconnection attempts reached')
       this.setConnectionState('error')
