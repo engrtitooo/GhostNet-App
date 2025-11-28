@@ -111,11 +111,13 @@ export class SignalingClient {
    */
   disconnect(): void {
     this.intentionalDisconnect = true
+    // Clear callbacks to prevent any error notifications after intentional disconnect
+    this.callbacks = {}
     if (this.ws) {
       this.ws.close()
       this.ws = null
     }
-    this.setConnectionState('disconnected')
+    this._connectionState = 'disconnected'
   }
 
   /**
