@@ -205,25 +205,29 @@ export class SignalingClient {
           this.callbacks.onGhostLeft?.((message as GhostLeftMessage).payload.ghostName)
           break
 
-        case 'offer':
+        case 'offer': {
           const offerMsg = message as OfferMessage
           this.callbacks.onOffer?.(offerMsg.from, offerMsg.payload)
           break
+        }
 
-        case 'answer':
+        case 'answer': {
           const answerMsg = message as AnswerMessage
           this.callbacks.onAnswer?.(answerMsg.from, answerMsg.payload)
           break
+        }
 
-        case 'ice_candidate':
+        case 'ice_candidate': {
           const iceMsg = message as IceCandidateMessage
           this.callbacks.onIceCandidate?.(iceMsg.from, iceMsg.payload)
           break
+        }
 
-        case 'error':
+        case 'error': {
           const errorMsg = message as ErrorMessage
           this.callbacks.onError?.(errorMsg.payload.message, errorMsg.payload.code)
           break
+        }
 
         default:
           console.log('Unknown signaling message type:', message.type)

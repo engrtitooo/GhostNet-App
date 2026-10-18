@@ -366,7 +366,7 @@ No sign-up forms. No email verification. No password requirements. Just instant 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 20.x, 22.x, or 24+
 - npm
 
 ### Quick Start
